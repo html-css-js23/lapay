@@ -11,6 +11,46 @@
     <style>
         body {
             font-family: 'Comfortaa', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0; /* Optional background color */
+        }
+
+        div {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff; /* Optional background color */
+            border-radius: 8px; /* Optional border-radius for a container look */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional box shadow for a subtle lift */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px; /* Adjust the value for more or less rounding */
+            background: linear-gradient(to right, #fdd835, #2196F3); /* Yellow to blue gradient */
+            color: #fff;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #ffeb3b, #03a9f4); /* Additional yellow to blue gradient */
+            mix-blend-mode: multiply;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
     </style>
 </head>
@@ -21,7 +61,7 @@
     <p>Refresh yourself with our delicious lemonade!</p>
 
     <button onclick="redirectToPayment()">Purchase Lemonade</button>
-    <p>*Choose quantity on payment page</p>
+    <p>*Choose quantity on the payment page</p>
 </div>
 
 <script>
