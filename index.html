@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lemonade Shop</title>
+    <title>Lemonade Payment</title>
 
     <!-- Include Comfortaa Bold font from Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
@@ -28,29 +28,10 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional box shadow for a subtle lift */
         }
 
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            border: none;
-            border-radius: 25px; /* Adjust the value for more or less rounding */
-            background: linear-gradient(to right, #fdd835, #2196F3); /* Yellow to blue gradient */
-            color: #fff;
-            outline: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, #ffeb3b, #03a9f4); /* Additional yellow to blue gradient */
-            mix-blend-mode: multiply;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        /* Optional styling for the button */
+        stripe-buy-button {
+            display: inline-block;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -60,15 +41,18 @@
     <h1>Welcome to our Lemonade Shop</h1>
     <p>Refresh yourself with our delicious lemonade!</p>
 
-    <button onclick="redirectToPayment()">Purchase Lemonade</button>
+    <!-- Include Stripe Buy Button script -->
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+    <!-- Use Stripe Buy Button with your parameters -->
+    <stripe-buy-button
+      buy-button-id="buy_btn_1OLUjMHKBY9BjY7pG5paDC8N"
+      publishable-key="pk_live_51OHqyDHKBY9BjY7pRn7t87HG00p3mCxJDJTWAiV23o8FZPGOSIhSsbndCPY4qAmpUEByISC9z12iqScjGuiZgj8p00zmAK8yPW"
+    >
+    </stripe-buy-button>
+
     <p>*Choose quantity on the payment page</p>
 </div>
-
-<script>
-    function redirectToPayment() {
-        window.location.href = "https://buy.stripe.com/9AQcPTbFacpMda0000";
-    }
-</script>
 
 </body>
 </html>
