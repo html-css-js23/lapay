@@ -3,56 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lemonade Payment</title>
-
-    <!-- Include Comfortaa Bold font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
-
+    <title>Responsive Layout with JavaScript</title>
     <style>
-        body {
-            font-family: 'Comfortaa', sans-serif;
+        /* CSS */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: #f0f0f0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0; /* Optional background color */
-        }
-
-        div {
-            text-align: center;
             padding: 20px;
-            background-color: #ffffff; /* Optional background color */
-            border-radius: 8px; /* Optional border-radius for a container look */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional box shadow for a subtle lift */
         }
-
-        /* Optional styling for the button */
-        stripe-buy-button {
-            display: inline-block;
-            margin-top: 20px;
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        header a {
+            text-decoration: none;
+            color: #fff;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        section {
+            margin: 20px 0;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #444;
+        }
+        button.active {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
+    <header>
+        <a href="#">Logo</a>
+    </header>
+    <main>
+        <section>
+            <h1>Welcome to my website!</h1>
+            <p>This is a responsive layout that adapts to different screen sizes.</p>
+            <button>Click me!</button>
+        </section>
+        <section>
+            <h2>This is a second section</h2>
+            <p>This section has a different background color</p>
+            <button>Click me too!</button>
+        </section>
+    </main>
+    <script>
+        // JavaScript
+        const button = document.querySelector('button');
+        const button2 = document.querySelector('button:nth-child(2)');
+        const sections = document.querySelectorAll('section');
 
-<div>
-    <h1>Welcome to our Lemonade Shop</h1>
-    <p>Refresh yourself with our delicious lemonade!</p>
+        button.addEventListener('click', () => {
+            button.classList.toggle('active');
+        });
 
-    <!-- Include Stripe Buy Button script -->
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+        button2.addEventListener('click', () => {
+            button2.classList.toggle('active');
+        });
 
-    <!-- Use Stripe Buy Button with your parameters -->
-    <stripe-buy-button
-      buy-button-id="buy_btn_1OLUjMHKBY9BjY7pG5paDC8N"
-      publishable-key="pk_live_51OHqyDHKBY9BjY7pRn7t87HG00p3mCxJDJTWAiV23o8FZPGOSIhSsbndCPY4qAmpUEByISC9z12iqScjGuiZgj8p00zmAK8yPW"
-    >
-    </stripe-buy-button>
-
-    <p>*Choose quantity on the payment page</p>
-</div>
-
+        sections.forEach((section) => {
+            section.addEventListener('click', () => {
+                section.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
