@@ -7,20 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Shop</h1>
-    </header>
-    <main>
-        <section class="product">
-            <h2>Test Item1</h2>
-            <p>$10.00</p>
-            <button class="purchase">Purchase</button>
-        </section>
-        <section class="cart">
-            <h2>Cart</h2>
-            <ul></ul>
-        </section>
-    </main>
+    <div class="container">
+        <h1>Welcome to my shop!</h1>
+        <button class="purchase-button">Purchase</button>
+    </div>
+    <div class="cart">
+        <h2>Cart</h2>
+        <form>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" min="1" max="999">
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            <button type="submit">Checkout</button>
+        </form>
+    </div>
+    <div class="checkout">
+        <h2>Checkout</h2>
+        <label for="delivery">Delivery or Takeout?</label>
+        <input type="radio" id="delivery" name="delivery" value="delivery">
+        <label for="takeout">Takeout</label>
+        <input type="radio" id="takeout" name="delivery" value="takeout">
+        <button type="submit">Place Order</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
